@@ -1,6 +1,6 @@
 {
   "name": "ghostframe-monorepo",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "description": "GhostFrame monorepo",
   "packageManager": "pnpm@10.6.0",
@@ -11,4 +11,3 @@
     "lint": "pnpm -r exec tsc --noEmit"
   }
 }
-
