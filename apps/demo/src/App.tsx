@@ -28,7 +28,7 @@ function formatResult(result: GhostFrameTransitionResult | null): string {
     return "No transition yet";
   }
 
-  return `${result.mode} · ${result.status} · ${result.sharedElements} shared`;
+  return `${result.mode} · ${result.preset} · ${result.status} · ${result.sharedElements} shared`;
 }
 
 export function App() {
@@ -156,21 +156,21 @@ export function App() {
         <ListDetailExample
           cards={featureCards}
           activeId={selectedCard}
-          onOpen={(id) => runTransition(() => setSelectedCard(id), { preset: "morph" })}
-          onClose={() => runTransition(() => setSelectedCard(null), { preset: "morph" })}
+          onOpen={(id) => runTransition(() => setSelectedCard(id))}
+          onClose={() => runTransition(() => setSelectedCard(null))}
         />
 
         <GalleryLightboxExample
           shots={galleryShots}
           activeId={activeShot}
-          onOpen={(id) => runTransition(() => setActiveShot(id), { preset: "morph" })}
-          onClose={() => runTransition(() => setActiveShot(null), { preset: "fade" })}
+          onOpen={(id) => runTransition(() => setActiveShot(id))}
+          onClose={() => runTransition(() => setActiveShot(null))}
         />
 
         <TabsExample
           items={tabs}
           activeId={activeTab}
-          onSelect={(id) => runTransition(() => setActiveTab(id), { preset: preset === "morph" ? "slide" : preset, autoSharedElements: true })}
+          onSelect={(id) => runTransition(() => setActiveTab(id), { autoSharedElements: true })}
         />
       </main>
     </div>
